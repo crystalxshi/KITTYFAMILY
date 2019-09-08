@@ -1,0 +1,12 @@
+{{extend 'layout.html'}}
+{{block header}}
+{{end}}
+
+<link href="/Final_Project/static/css/custom.css" rel="stylesheet" type="text/css">
+<link href="/Final_Project/static/css/stupid.css" rel="stylesheet" type="text/css">
+
+<div>
+    <h1>Recommendation: </h1>
+    {{=form}}
+    <a href="{{=URL('default', 'recommendation')}}" class="btn">Cancel</a>
+</div>

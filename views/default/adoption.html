@@ -1,0 +1,48 @@
+{{extend 'layout.html'}}
+{{block header}}
+{{end}}
+
+<link href="/Final_Project/static/css/custom.css" rel="stylesheet" type="text/css">
+<link href="/Final_Project/static/css/stupid.css" rel="stylesheet" type="text/css">
+
+
+<p>
+    <a href="{{=URL('default', 'addcatinfo')}}" class="btn rounded add_cat_info">
+        <i class="fa fa-plus"></i> Add Info
+    </a>
+</p>
+
+
+
+<div class="adopt_page container" style="min-height: 800px">
+    {{for r in adoption:}}
+    <div class="cats_info half">
+        <div class="cat_info">
+            <img style="width:200px; height:200px;margin-left: 25px;" src="{{=URL('default','download', args=r['picture'])}}" />
+            <div class="cat_name">{{=r['cat_name']}}</div>
+            <div class="cat_intro">{{=r['cat_breed']}}</div>
+            <div class="cat_gender_age">{{=r['cat_gender']}} • {{=r['cat_age']}}</div>
+
+        </div>
+        <div class="cat_info_button right">
+        {{if auth.user.email == r['post_author']:}}
+            <a class = "btn blue" href="{{=URL('default','editcat',args=r['id'])}}"><i class = "fa fa-edit"></i></a>
+            {{if r['is_available'] is True:}}
+                <a class = "btn blue" href="{{=URL('default','ifavailable',args=r['id'])}}"><i class = "fa fa-check"></i></a>
+            {{else:}}
+                <a class = "btn gray" href="{{=URL('default','ifavailable',args=r['id'])}}"><i class = "fa fa-times"></i></a>
+            {{pass}}
+        {{else:}}
+            {{if r['is_available'] is True:}}
+                <a class = "btn blue" href="{{=URL('default','viewcat',args=r['id'])}}"><i class = "fa fa-eye"></i></a>
+            {{else:}}
+                <button class = "btn gray" disabled><i class = "fa fa-eye"></i></button>
+            {{pass}}
+
+        {{pass}}
+        </div>
+
+    </div>
+    {{pass}}
+
+</div>

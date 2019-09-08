@@ -1,0 +1,31 @@
+{{extend 'layout.html'}}
+{{block header}}
+{{end}}
+
+<div class= "view_cat_content container" >
+    <h2 class="cat_name" style="font-size: 30px; color: saddlebrown">{{=cat_infor['cat_name']}}</h2>
+
+    <div class="cat_detail">
+        <span class="cat_breed_gender_age">{{=cat_infor['cat_breed']}} •{{=cat_infor['cat_age']}} • {{=cat_infor['cat_gender']}}</span>
+
+    </div>
+    <div class="adoption_cat_info half">
+        <img style="width:300px; height:auto; margin-top: 20px" src="{{=URL('default','download', args=cat_infor['picture'])}}" />
+    </div>
+    <div class="adoption_cat_info half">
+        <div class="cat_title" style="font-size: 25px;color: saddlebrown;">{{=cat_infor['cat_name']}}'s Story</div>
+        <div class="cat_intro" style="font-size: 16px;">{{=cat_infor['cat_intro']}}</div>
+    </div>
+    <div class="cat_card">
+        <div class="rescue_group">Rescue Group:
+            <div style="font-weight: bolder; font-size: 22px; padding-top: 10px;">{{=cat_infor['rescue_group']}}</div>
+        </div>
+        -------------------------
+        <div class="cat_id">Cat ID#: {{=cat_infor['cat_id']}}</div>
+        -------------------------
+        <div class="context_info:">Context Info
+            <div class="phone" style="color: green;padding-top: 10px;">{{=cat_infor['phone']}}</div>
+            <div class="phone" style="color: green;padding-top: 10px;">{{=cat_infor['email']}}</div>
+        </div>
+    </div>
+</div>

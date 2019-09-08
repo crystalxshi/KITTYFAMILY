@@ -1,0 +1,183 @@
+.main_picture{
+    margin-bottom: -5%;
+}
+.main_page{
+    position:relative;
+    min-height: 300px;
+}
+.choice_boxes{
+    text-align: center;
+    background-color: rgba(255,255,255,0.3);
+    min-width: 1300px;
+}
+.choice_box{
+    background-color: orange;
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    margin-right: 2%;
+    margin-left: 2%;
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+    padding-top: 30px;
+
+}
+.box_title{
+    height: 100px;
+}
+.box_info{
+    font-size: 14px;
+    font-weight: normal;
+    padding-left: 30px;
+    text-align: left;
+    height: 100px;
+}
+
+.links{
+    height: 50px;
+}
+
+#links{
+    color: white;
+    font-weight: normal;
+    font-size: 14px;
+    padding-left: 150px;
+
+}
+.add_cat_info{
+    margin-top: 1%;
+    margin-left: 1%;
+}
+.cats_info{
+    margin-left: 3%;
+    margin-top: 2%;
+    width: 300px;
+    height: 400px;
+    border: 1px dashed darkgrey;
+    text-align: center;
+}
+.cat_info{
+    margin-top: 10px;
+    height: 360px;
+    font-family: 'Operator Mono', 'Source Sans Pro', Menlo, Monaco, Consolas, Courier New, monospace;
+}
+.cat_name{
+    color: #0074d9;
+    font-size: 26px;
+    padding-top: 25px;
+}
+.cat_gender_age{
+    padding-top: 10px;
+}
+.cat_intro{
+    padding-top: 10px;
+}
+
+.view_cat_content{
+    margin-left: 3%;
+    margin-right: 3%;
+}
+.cat_card{
+    margin-top: 20px;
+    border: 1px dashed darkgrey;
+    width: 300px;
+    height: 300px;
+    padding-left: 25px;
+    text-align: left;
+    padding-right: 25px;
+    padding-top: 30px;
+    font-family: 'Operator Mono', 'Source Sans Pro', Menlo, Monaco, Consolas, Courier New, monospace;
+}
+.rescue_group{
+    color: saddlebrown;
+}
+.cat_id{
+    padding-top: 20px;
+    color: saddlebrown;
+    font-weight: bold;
+}
+.context_info{
+    padding-top: 30px;
+    color: saddlebrown;
+}
+.experience_page{
+    padding-left: 1%;
+    min-height: 800px;
+    background-color: blanchedalmond;
+}
+.post_list{
+    margin-top: 30px;
+}
+.thumbs{
+    padding-top: 10px;
+    padding-left: 10px;
+    color: orange;
+}
+.recommendation{
+    font-family: 'Operator Mono', 'Source Sans Pro', Menlo, Monaco, Consolas, Courier New, monospace;
+    font-size: 20px;
+    text-align: left;
+    padding-top: 20px;
+}
+.recommendations{
+    margin-top: 20px;
+    border: 1px dashed darkgrey;
+    width: 250px;
+    height: 300px;
+    padding-left: 25px;
+    text-align: left;
+    padding-right: 25px;
+    padding-top: 30px;
+    font-family: 'Operator Mono', 'Source Sans Pro', Menlo, Monaco, Consolas, Courier New, monospace;
+    margin-right: 3%;
+}
+.recommendation_page{
+    margin-left: 3%;
+    margin-right: 3%;
+}
+.describes{
+    padding-top: 20px;
+    font-size: 16px;
+    font-family: 'Operator Mono', 'Source Sans Pro', Menlo, Monaco, Consolas, Courier New, monospace;
+    color: sienna;
+}
+.story_page{
+    margin-left: 2%;
+    margin-right: 2%;
+    min-height: 1000px;
+}
+.story_title_box_inner{
+    font-family: Geneva;
+    font-weight: bold;
+    color:black;
+    font-size:45px;
+    margin-right:30px;
+    margin-left: 30px;
+    margin-bottom: 60px;
+    padding-bottom:50px;
+    word-spacing: 10px;
+    height: 20px;
+    margin-top: -5%;
+}
+.experience_title_box_inner{
+    font-family: Geneva;
+    font-weight: bold;
+    color:black;
+    font-size:45px;
+    margin-right:30px;
+    margin-left: 30px;
+    margin-bottom: 60px;
+    padding-bottom:50px;
+    word-spacing: 10px;
+    height: 20px;
+    margin-top: -5%;
+
+}
+.stories{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.experience_title_box{
+    background-color: blanchedalmond;
+}

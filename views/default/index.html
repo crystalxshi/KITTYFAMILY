@@ -1,0 +1,70 @@
+{{extend 'layout.html'}}
+
+{{block header}}
+
+<div class="main_picture">
+     <img id="picture_size" src="../static/images/mainpicture.JPG" style="width: 100%; height: auto;">
+</div>
+
+
+{{end}}
+
+<link href="/Final_Project/static/css/custom.css" rel="stylesheet" type="text/css">
+<link href="/Final_Project/static/css/stupid.css" rel="stylesheet" type="text/css">
+
+<div class="main_page">
+    <div class="choice_boxes container">
+        <div class="choice_box quarter">
+            <div class="box_title">
+                <img  style="padding-top: 20px" src="../static/images/loving-home.png">Adoption
+            </div>
+            <div class="box_info">
+                Help them, give them a home.
+            </div>
+            <div class="links">
+                <a id="links" href="{{=URL('default','adoption')}}">More...</a>
+            </div>
+
+        </div>
+        <div class="choice_box quarter">
+            <div class="box_title">
+                <img  style="padding-top: 20px" src="../static/images/book.png">Experience
+            </div>
+            <div class="box_info">
+                Your experiences may help us.
+            </div>
+            <div class="links">
+                <a id="links" href="{{=URL('default','experience')}}">More...</a>
+            </div>
+
+        </div>
+        <div class="choice_box quarter">
+            <div class="box_title">
+                <img  style="padding-top: 20px" src="../static/images/experiment-results.png">Story
+            </div>
+            <div class="box_info">
+                A warm story, an important memory.
+            </div>
+            <div class="links">
+                <a id="links" href="{{=URL('default','story')}}">More...</a>
+            </div>
+
+        </div>
+        <div class="choice_box quarter">
+            <div class="box_title">
+                <img  style="padding-top: 20px" src="../static/images/likeidea.png">Recommend
+            </div>
+            <div class="box_info">
+                Better thins you may not know.
+            </div>
+            <div class="links">
+                <a id="links" href="{{=URL('default','recommendation')}}">More...</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+

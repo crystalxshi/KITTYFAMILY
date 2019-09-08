@@ -1,0 +1,83 @@
+{{extend 'layout.html'}}
+
+{{block head}}
+<script src="{{=URL('static', 'js/vue.js')}}"></script>
+<script>
+    var add_post_url = "{{=URL('api', 'add_post', user_signature=True)}}";
+    var get_post_list_url = "{{=URL('api', 'get_post_list')}}";
+    // Like callbacks.
+    var set_like_url = "{{=URL('api', 'set_like', user_signature=True)}}";
+    var get_likers_url = "{{=URL('api', 'get_likers')}}"
+    // Stars.
+    var set_stars_url = "{{=URL('api', 'set_stars', user_signature=True)}}";
+    var is_logged_in = {{='false' if auth.user is None else 'true'}};
+    var user_email = "{{='' if auth.user is None else auth.user.email}}";
+    var edit_post_url = "{{=URL('api', 'edit_post', user_signature=True)}}";
+    var delete_post_url = "{{=URL('api', 'delete_post', user_signature=True)}}";
+    var logged_in_user = "{{=URL('api', 'get_logged_in_user')}}";
+    function refresh() {
+        location.reload(true);
+    }
+</script>
+<div class="experience_pic" >
+    <picture>
+        <img src="../static/images/shop-hero-cats.jpg" style="width: 100%; height: 40%;">
+    </picture>
+</div>
+{{end}}
+<!--Basic from hws. Thanks for those classmates who did good in hw3, hw4-->
+<div class="experience_page">
+
+    <div class="experience_title_box">
+        <h1 class="experience_title_box_inner">
+            You may not know <i class="fa fa-thumbs-up" style="color: yellow"></i>
+        </h1>
+    </div>
+    <div id="vue-div" class="display:none">
+        <div id="add_post" style="display:none">
+            <button v-if="form_show==false" v-on:click="show_form" class="rounded"><i class="fa fa-plus"></i> Add Post</button>
+            <div v-if="form_show">
+                <div class="container form_row">
+                    <div class="label quarter" style="text-align: right; font-family: 'Lobster', cursive; font-weight: bold; font-size: 25px; color: saddlebrown ">
+                        Experience:
+                    </div>
+                    <div class="form threequarters">
+                        <textarea v-model="form_content" placeholder="Enter Your Experience"></textarea>
+                    </div>
+                </div>
+                <div class="container form_row">
+                    <div class="quarter"></div>
+                    <div class="threequarters">
+                        <div class="submit" style="margin-top: 5px">
+                            <button id="add-post" v-on:click="add_post" class="rounded" onclick="refresh()">Submit</button>
+                            <button v-on:click="show_hide" class="rounded">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div v-if="post_list.length === 0">There are no posts.</div>
+
+        <div id="post_list">
+            <div class="post_list" v-for="(post,index) in post_list">
+                <div class="post_content" v-if="post.editing === false">
+                    ${post.post_content}
+                    <a class="btn right rounded orange" v-if="user_email == post.post_author" id="edithover" v-on:click="editPost(post._idx)"><i class="fa fa-pencil" ></i></a>
+                    <a  v-on:click="deletePost(post._idx)" class="rounded right orange btn" v-if="user_email == post.post_author" onclick="refresh()"><i class="fa fa-trash"></i></a>
+                </div>
+                <div v-if="post.editing === true">
+                    <textarea v-model="post.post_content" id="edittext"></textarea>
+                    <button v-on:click="submitEditPost(post._idx)" class="rounded" style="margin-top: 5px">submit!</button>
+                </div>
+                <div class="thumbs"v-if="login">
+                    <i class="fa " v-bind:class="[(post.thumb=='u'||type==0&&index==current)?'fa-thumbs-up':'fa-thumbs-o-up',post.thumb=='u'?'color-black':'color-grey']" aria-hidden="true" v-on:click="changethumbs('u',post.id)"  @mouseover="thumbTrans(0,1,index)" @mouseout="thumbTrans(0,index)"></i>
+                    <span style="margin:0 20px 0 2px">${post.like_num}</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="{{=URL('static', 'js/default_index.js')}}"></script>

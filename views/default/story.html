@@ -1,0 +1,39 @@
+{{extend 'layout.html'}}
+{{block header}}
+
+<div class="story_pic">
+    <picture>
+        <img src="../static/images/cats.png" style="width: 100%; height: 55%">
+    </picture>
+</div>
+{{end}}
+
+<link href="/Final_Project/static/css/custom.css" rel="stylesheet" type="text/css">
+<link href="/Final_Project/static/css/stupid.css" rel="stylesheet" type="text/css">
+
+<div class="story_title_box" style="width: 85%;">
+    <h1 class="story_title_box_inner">
+       <i class="fa fa-heart" style="color: red"></i> Lovely  Stories <i class="fa fa-heart" style="color: red"></i>
+    </h1>
+</div>
+<p>
+    <a href="{{=URL('default', 'addstory')}}" class="btn rounded add_cat_info">
+        <i class="fa fa-plus"></i> Add
+    </a>
+</p>
+<div class="story_page">
+    {{for r in story:}}
+    {{if r is None:}}
+        <div>Add your stories here, and share with us.</div>
+    {{else:}}
+        <div class="stories">
+            <div class="story">
+                <video controls src="{{=URL('default','download', args=r['video'])}}" style="width: 200px; height: auto"></video>
+                <div class="describes">
+                    <i class="fa fa-heart" style="color: red"></i> {{=r['describes']}} <i class="fa fa-heart" style="color: red"></i>
+                </div>
+            </div>
+        </div>
+    {{pass}}
+    {{pass}}
+</div>
